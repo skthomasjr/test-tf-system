@@ -23,7 +23,5 @@ resource "aws_s3_bucket" "bucket" {
     enabled = "${var.versioning}"
   }
 
-  cors_rule      = "${var.cors_rule}"
   tags           = "${var.tags}"
-  lifecycle_rule = "${var.lifecycle_rules}"
 }
