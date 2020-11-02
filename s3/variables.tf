@@ -2,6 +2,7 @@ variable "region" {}
 
 variable "bucket" {
   description = "name for the bucket"
+  default     = "test-tf-bucket-gitlab"
 }
 
 variable "acl" {
