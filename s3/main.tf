@@ -3,13 +3,13 @@ terraform {
 }
 
 provider "aws" {
-  region  = "${var.region}"
+  region  = var.region
 }
 
 # ----- Bucket -----
 resource "aws_s3_bucket" "bucket" {
-  bucket = "${var.bucket}" # Current var is name
-  acl    = "${var.acl}"
+  bucket = var.bucket
+  acl    = var.acl
 
   server_side_encryption_configuration {
     rule {
@@ -20,8 +20,8 @@ resource "aws_s3_bucket" "bucket" {
   }
 
   versioning {
-    enabled = "${var.versioning}"
+    enabled = var.versioning
   }
 
-  tags           = "${var.tags}"
+  tags           = var.tags
 }
